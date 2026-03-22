@@ -1,7 +1,7 @@
 # simple-3d
 
-(en) This is the English README.
-(ja) 日本語版は[こちら](README_JA.md)です。
+(en) This is the English README.  
+(ja) 日本語版は[こちら](https://github.com/MasahideMori-SimpleAppli/simple_3d_py/blob/main/README_JA.md)です。
 
 ## Overview
 
@@ -208,3 +208,14 @@ For compatibility with older versions (≤ v20, snake_case keys), use `to_dict_v
 ## License
 
 This software is released under the MIT License. See the LICENSE file for details.
+
+## Trademarks
+
+- “Dart” and “Flutter” are trademarks of Google LLC.  
+  *This package is not developed or endorsed by Google LLC.*
+
+- “Python” is a trademark of the Python Software Foundation.  
+  *This package is not affiliated with the Python Software Foundation.*
+
+- GitHub and the GitHub logo are trademarks of GitHub, Inc.  
+  *This package is not affiliated with GitHub, Inc.*

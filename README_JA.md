@@ -1,7 +1,6 @@
 # simple-3d
 
 日本語版の解説です。
-英語版は[こちら](README.md)です。
 
 ## 概要
 
@@ -208,3 +207,14 @@ Simple 3D Format
 ## ライセンス
 
 このソフトウェアはMITライセンスの元配布されます。LICENSEファイルの内容をご覧ください。
+
+## Trademarks
+
+- “Dart” and “Flutter” are trademarks of Google LLC.  
+  *This package is not developed or endorsed by Google LLC.*
+
+- “Python” is a trademark of the Python Software Foundation.  
+  *This package is not affiliated with the Python Software Foundation.*
+
+- GitHub and the GitHub logo are trademarks of GitHub, Inc.  
+  *This package is not affiliated with GitHub, Inc.*
