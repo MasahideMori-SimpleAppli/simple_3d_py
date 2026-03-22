@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-3d"
+version = "17.2.0"
+description = "Python port of the simple_3d Dart package. 3D object data structures with JSON serialization compatible with the Dart version."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+keywords = ["3d", "geometry", "vector", "serialization"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[project.urls]
+Homepage = "https://github.com/MasahideMori-SimpleAppli/simple_3d_py"
