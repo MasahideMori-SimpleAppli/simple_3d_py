@@ -36,13 +36,19 @@ class Sp3dPhysics:
         The accumulated rotation angle of the object in radians.
     name : str or None, optional
         A name describing the physics action.
+    force : Sp3dV3D or None, optional
+        Accumulated force buffer for the current timestep (application-defined units).
+        Zero → accumulate → integrate → zero each tick.
+    torque : Sp3dV3D or None, optional
+        Accumulated torque buffer for the current timestep (application-defined units).
+        Same lifecycle as force.
     others : dict or None, optional
         Additional optional attributes.  Only JSON-serializable values
         are accepted.
     """
 
     CLASS_NAME = "Sp3dPhysics"
-    VERSION = "5"
+    VERSION = "6"
 
     def __init__(
         self,
@@ -55,6 +61,8 @@ class Sp3dPhysics:
         angular_velocity: float | None = None,
         angle: float | None = None,
         name: str | None = None,
+        force: Sp3dV3D | None = None,
+        torque: Sp3dV3D | None = None,
         others: dict[str, Any] | None = None,
     ) -> None:
         self.is_locked = is_locked
@@ -66,6 +74,8 @@ class Sp3dPhysics:
         self.angular_velocity = angular_velocity
         self.angle = angle
         self.name = name
+        self.force = force
+        self.torque = torque
         self.others = others
 
     def deep_copy(self) -> Sp3dPhysics:
@@ -86,6 +96,8 @@ class Sp3dPhysics:
             angular_velocity=self.angular_velocity,
             angle=self.angle,
             name=self.name,
+            force=self.force.deep_copy() if self.force is not None else None,
+            torque=self.torque.deep_copy() if self.torque is not None else None,
             others=dict(self.others) if self.others is not None else None,
         )
 
@@ -113,6 +125,8 @@ class Sp3dPhysics:
             "angularVelocity": self.angular_velocity,
             "angle": self.angle,
             "name": self.name,
+            "force": self.force.to_dict() if self.force is not None else None,
+            "torque": self.torque.to_dict() if self.torque is not None else None,
             "others": self.others,
         }
 
@@ -142,6 +156,8 @@ class Sp3dPhysics:
             angular_velocity=src["angularVelocity"],
             angle=src["angle"],
             name=src["name"],
+            force=Sp3dV3D.from_dict(src["force"]) if src.get("force") is not None else None,
+            torque=Sp3dV3D.from_dict(src["torque"]) if src.get("torque") is not None else None,
             others=src["others"],
         )
 

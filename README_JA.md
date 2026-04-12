@@ -161,7 +161,7 @@ Simple 3D Format
             - `material_index`: int または None
         - `is_particle`: bool
         - `r`: float — パーティクルタイプの半径
-        - `physics`: `Sp3dPhysics` または None
+        - `physics`: `Sp3dPhysics` または Nonee - 物理計算で使用される複数の変数を持つオブジェクト
         - `is_touchable`: bool — False の場合、タッチ計算の対象外になります
         - `name`: str または None
         - `option`: dict または None — アプリ毎に拡張可能なオプション属性（JSON化できる値のみ）
@@ -178,17 +178,7 @@ Simple 3D Format
     - `id`: str または None
     - `name`: str または None
     - `author`: str または None
-    - `physics`: `Sp3dPhysics` または None
-        - `is_locked`: bool — True の場合、固定オブジェクトとして扱われます
-        - `mass`: float または None — 質量（kg）
-        - `speed`: float または None — 速さ（m/s）
-        - `direction`: `Sp3dV3D` または None — 進行方向の単位ベクトル
-        - `velocity`: `Sp3dV3D` または None — moveする時に使います
-        - `rotate_axis`: `Sp3dV3D` または None — 回転軸
-        - `angular_velocity`: float または None — 角速度（rad/s）
-        - `angle`: float または None — 角度（rad）
-        - `name`: str または None — 動作の名前
-        - `others`: dict または None
+    - `physics`: `Sp3dPhysics` または None - 物理計算で使用される複数の変数を持つオブジェクト
     - `option`: dict または None
     - `layer_num`: int — 奥行方向の描画優先度（レイヤー番号が小さい方から先に描画）
     - `draw_mode`: `EnumSp3dDrawMode` — レンダラーで描画される時のモード

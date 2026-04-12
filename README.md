@@ -162,7 +162,7 @@ Advanced graphics.
             - `material_index`: int or None
         - `is_particle`: bool
         - `r`: float — radius for particle type
-        - `physics`: `Sp3dPhysics` or None
+        - `physics`: `Sp3dPhysics` or None - An object with multiple variables used in physical calculations.
         - `is_touchable`: bool — if False, excluded from touch calculations
         - `name`: str or None
         - `option`: dict or None — app-specific optional attributes (must be JSON-serializable)
@@ -179,17 +179,7 @@ Advanced graphics.
     - `id`: str or None
     - `name`: str or None
     - `author`: str or None
-    - `physics`: `Sp3dPhysics` or None
-        - `is_locked`: bool — if True, treated as a fixed object
-        - `mass`: float or None — (kg)
-        - `speed`: float or None — (m/s)
-        - `direction`: `Sp3dV3D` or None — unit direction vector
-        - `velocity`: `Sp3dV3D` or None — used for movement
-        - `rotate_axis`: `Sp3dV3D` or None
-        - `angular_velocity`: float or None — (rad/s)
-        - `angle`: float or None — (rad)
-        - `name`: str or None
-        - `others`: dict or None
+    - `physics`: `Sp3dPhysics` or None - An object with multiple variables used in physical calculations.
     - `option`: dict or None
     - `layer_num`: int — drawing priority in the depth direction
     - `draw_mode`: `EnumSp3dDrawMode` — drawing mode for renderers
