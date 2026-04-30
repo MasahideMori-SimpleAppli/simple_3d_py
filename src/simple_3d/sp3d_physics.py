@@ -148,13 +148,13 @@ class Sp3dPhysics:
 
         return cls(
             is_locked=src["isLocked"],
-            mass=src["mass"],
-            speed=src["speed"],
+            mass=float(src["mass"]) if src["mass"] is not None else None,
+            speed=float(src["speed"]) if src["speed"] is not None else None,
             direction=Sp3dV3D.from_dict(src["direction"]) if src.get("direction") is not None else None,
             velocity=Sp3dV3D.from_dict(src["velocity"]) if src.get("velocity") is not None else None,
             rotate_axis=Sp3dV3D.from_dict(src["rotateAxis"]) if src.get("rotateAxis") is not None else None,
-            angular_velocity=src["angularVelocity"],
-            angle=src["angle"],
+            angular_velocity=float(src["angularVelocity"]) if src["angularVelocity"] is not None else None,
+            angle=float(src["angle"]) if src["angle"] is not None else None,
             name=src["name"],
             force=Sp3dV3D.from_dict(src["force"]) if src.get("force") is not None else None,
             torque=Sp3dV3D.from_dict(src["torque"]) if src.get("torque") is not None else None,
@@ -203,13 +203,13 @@ class Sp3dPhysics:
 
         return cls(
             is_locked=src["is_locked"],
-            mass=src["mass"],
-            speed=src["speed"],
+            mass=float(src["mass"]) if src.get("mass") is not None else None,
+            speed=float(src["speed"]) if src.get("speed") is not None else None,
             direction=Sp3dV3D.from_dict_v14(src["direction"]) if src.get("direction") is not None else None,
             velocity=Sp3dV3D.from_dict_v14(src["velocity"]) if src.get("velocity") is not None else None,
             rotate_axis=Sp3dV3D.from_dict_v14(src["rotate_axis"]) if src.get("rotate_axis") is not None else None,
-            angular_velocity=src.get("angular_velocity"),
-            angle=src.get("angle"),
+            angular_velocity=float(src["angular_velocity"]) if src.get("angular_velocity") is not None else None,
+            angle=float(src["angle"]) if src.get("angle") is not None else None,
             name=src.get("name"),
             others=src.get("others"),
         )

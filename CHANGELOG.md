@@ -1,5 +1,11 @@
 # Changelog
 
+## [17.3.1] - 2026-04-30
+
+### Fixed
+- `Sp3dPhysics`: `from_dict` and `from_dict_v14` now safely convert `mass`, `speed`,
+  `angular_velocity`, and `angle` to `float` to handle JSON-decoded integer values correctly.
+
 ## [17.3.0] - 2026-04-12
 
 ### Added
